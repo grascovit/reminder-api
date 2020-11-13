@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.7.2
+  NewCops: enable
+  Exclude:
+    - db/**/*
+    - bin/**/*
+    - vendor/**/*
+    - node_modules/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - config/**/*
+
+Metrics/ModuleLength:
+  Exclude:
+    - spec/**/*
