@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_031015) do
+ActiveRecord::Schema.define(version: 2020_11_17_014015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reminders", force: :cascade do |t|
+    t.text "description"
+    t.float "radius"
+    t.string "place_type"
+    t.string "place"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.bigint "user_id"
+    t.datetime "last_notified_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reminders_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"

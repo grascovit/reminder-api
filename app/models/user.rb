@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :reminders, dependent: :destroy
+
   validates :first_name, :email, presence: true
 
   def self.from_omniauth(params)
