@@ -5,7 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'active_model_serializers', '~> 0.10.10'
 gem 'bootsnap', '~> 1.5.1', require: false
+gem 'jwt', '~> 2.2.2'
+gem 'omniauth', '~> 1.9.1'
 gem 'pg', '~> 1.2.3'
 gem 'puma', '~> 5.0.4'
 gem 'rack-cors', '~> 1.1.1'
