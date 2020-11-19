@@ -2,13 +2,15 @@
 
 class ApplicationController < ActionController::API
   def authenticate_user
-    current_user.present?
+    head :unauthorized and return unless current_user.present?
+
+    response.set_header('Access-Token', current_user.token)
   end
 
   def current_user
     @current_user ||= User.find(user_id)
   rescue ActiveRecord::RecordNotFound
-    head :unauthorized
+    head :unauthorized and return
   end
 
   private
