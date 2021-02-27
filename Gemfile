@@ -7,6 +7,7 @@ ruby '2.7.2'
 
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'bootsnap', '~> 1.5.1', require: false
+gem 'dotenv-rails', '~> 2.7.6'
 gem 'jwt', '~> 2.2.2'
 gem 'omniauth', '~> 1.9.1'
 gem 'pg', '~> 1.2.3'
