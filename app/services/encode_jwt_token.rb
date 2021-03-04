@@ -12,7 +12,7 @@ class EncodeJwtToken
   private
 
   def payload
-    { user_id: @user_id, exp: 1.day.from_now.to_i }
+    { user_id: @user_id }
   end
 
   def secret
